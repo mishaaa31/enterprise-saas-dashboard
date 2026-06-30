@@ -1,39 +1,35 @@
-# Enterprise SaaS Admin Dashboard
+# Enterprise SaaS Admin Dashboard (Pro-Dev Workspace)
 
-A premium, production-ready, dark-mode only enterprise admin dashboard showcasing advanced React engineering skills.
+**Live Deployment URL (Placeholder)**: [https://enterprise-saas-dashboard.vercel.app](https://enterprise-saas-dashboard.vercel.app)
+**GitHub Repository (Placeholder)**: [https://github.com/your-username/enterprise-saas-dashboard](https://github.com/your-username/enterprise-saas-dashboard)
 
-## Overview
+A premium, production-ready, dark-mode only enterprise admin dashboard built to match Josh Technology Group (JTG) frontend engineering standards.
 
-This project was built to demonstrate proficiency in architecting and implementing complex React applications. It focuses heavily on advanced data manipulation, efficient global and server state management, and providing a highly refined, modern aesthetic (inspired by top-tier SaaS platforms like Vercel and Linear).
+## Project Overview
 
-The core of the application features a robust Master Data Table that handles simulated server-side pagination, sorting, and global filtering, alongside multi-row selection and dynamic column visibility.
+This workspace showcases deep knowledge of modern frontend architecture, state management, and highly optimized DOM manipulation. It features a complete mock authentication flow, scalable folder structure, and a highly complex, WAI-ARIA compliant data table built from scratch.
 
 ## Tech Stack & Architecture
 
-- **React 19 + TypeScript + Vite**: Provides a fast, type-safe development environment and optimized production builds.
-- **Tailwind CSS v4**: Utility-first CSS framework for rapid UI development and implementing the rigid, premium dark-mode design system.
-- **TanStack Table (v8)**: A headless UI library used to build the highly complex and performant data table. It was chosen over pre-styled libraries (like MUI) to demonstrate deep implementation knowledge and total control over the DOM and styling.
-- **Redux Toolkit**: Manages global UI state (sidebar toggling, table column preferences) and user authentication state. Essential for demonstrating enterprise-scale state handling.
-- **TanStack Query (React Query)**: Manages asynchronous state, data fetching, caching, and loading states for the simulated API.
-- **React Hook Form + Zod**: Handles form state and schema-based validation on the Login page with optimal performance and type safety.
-- **Lucide React**: Crisp, modern icon set.
-- **faker.js**: Generates the large, realistic mock dataset for the data table.
+- **React 19 + TypeScript + Vite**: Provides a fast, strictly-typed development environment for enterprise scalability and performance.
+- **Tailwind CSS v4**: Utility-first CSS framework used for the rigid, premium dark-mode design system (`#111111` background, `#1A1A1A` surfaces, Inter font, `#3B82F6` accent).
+- **TanStack Table (v8)**: Headless UI library used to build the complex data table. Chosen specifically to demonstrate deep DOM control, custom UI implementations, and WAI-ARIA compliance (instead of relying on pre-styled components).
+- **Redux Toolkit**: Manages global enterprise-level UI state (sidebar toggling, table column preferences) and mock authentication.
+- **TanStack Query (React Query)**: Handles asynchronous state, caching, prefetching, and loading (skeleton) states for the simulated API with a 1000+ realistic dataset.
+- **React Hook Form + Zod**: Highly performant, schema-validated form handling for the Login flow.
+- **Error Boundaries**: Implemented at the root level to prevent crashes and provide robust error handling.
 
-## Features
+## Features Implementation
 
-- **Authentication Flow**: Mock login page with validation. Secures the main dashboard route.
-- **Advanced Data Table**:
-  - Global searching and filtering.
-  - Server-side sorting simulation.
-  - Pagination with configurable page sizes.
-  - Multi-row selection.
-  - Toggling column visibility.
-  - Loading skeleton states.
-- **Premium Aesthetics**:
-  - Consistent #111111 background and #1A1A1A surface layers.
-  - Vibrant accent colors (#3B82F6) for interactive elements.
-  - Modern typography (Inter font).
-  - Micro-interactions and hover states.
+- **Premium Layout & Auth**: Persistent collapsible sidebar, top header, secure routing, and global Error Boundary.
+- **Master Data Table**: 
+  - Server-side sorting & pagination simulation.
+  - Global filtering.
+  - Row selection (single & multi-select).
+  - Column visibility toggling.
+  - Full WAI-ARIA compliance (`role="grid"`, `aria-sort`, `aria-selected`, etc.).
+  - Responsive overflow handling.
+- **Mini-Tools**: Crisp hover micro-interactions and strict edge-case prevention.
 
 ## How to Run Locally
 
@@ -56,11 +52,15 @@ The core of the application features a robust Master Data Table that handles sim
 4. **Access the application**:
    Open `http://localhost:5173` in your browser.
 
-5. **Login Credentials**:
+5. **Login Credentials (Mock Auth)**:
    - Email: `admin@example.com`
    - Password: `password`
 
-## Deployment
+## Deployment Instructions
 
-This project is configured to be easily deployed to Vercel. 
-Simply push to a GitHub repository and import the project in the Vercel dashboard.
+*Note: Since the `gh` and `vercel` CLI tools were not available on the local machine during generation, the project is initialized locally with Git. To deploy to Vercel:*
+
+1. Push this local repository to your GitHub account.
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard).
+3. Click **Add New Project**, import the GitHub repository.
+4. Click **Deploy** (Vercel automatically detects the Vite config).
