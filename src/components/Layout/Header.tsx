@@ -4,6 +4,7 @@ import { Menu, LogOut, Bell, Search } from 'lucide-react';
 import { logout } from '../../store/slices/authSlice';
 import { toggleSidebar } from '../../store/slices/uiSlice';
 import { useAppSelector } from '../../store/hooks';
+import { toast } from 'sonner';
 
 export const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -42,7 +43,10 @@ export const Header: React.FC = () => {
           />
         </div>
 
-        <button className="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors relative">
+        <button 
+          onClick={() => toast.info('No new notifications')}
+          className="p-2 hover:bg-white/5 rounded-lg text-gray-400 hover:text-white transition-colors relative"
+        >
           <Bell size={20} />
           <span className="absolute top-1.5 right-2 w-2 h-2 bg-blue-500 rounded-full border border-[#1A1A1A]"></span>
         </button>

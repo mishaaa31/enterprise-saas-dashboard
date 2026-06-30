@@ -56,8 +56,12 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#111111] p-4">
-      <div className="max-w-md w-full bg-[#1A1A1A] rounded-2xl shadow-2xl p-8 border border-white/5">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-[#0A0A0A]">
+      {/* Background glowing orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[128px] pointer-events-none" />
+
+      <div className="max-w-md w-full bg-[#111111]/80 backdrop-blur-2xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] p-10 border border-white/10 relative z-10">
         <div className="flex flex-col items-center mb-8">
           <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-500">
             <LayoutDashboard size={28} />

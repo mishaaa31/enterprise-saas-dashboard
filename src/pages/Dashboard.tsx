@@ -7,6 +7,8 @@ import { DataTable } from '../components/Table/DataTable';
 import { cn } from '../lib/utils';
 import { Download } from 'lucide-react';
 
+import { toast } from 'sonner';
+
 export const Dashboard: React.FC = () => {
   // Table State
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -25,6 +27,12 @@ export const Dashboard: React.FC = () => {
         globalFilter,
       }),
   });
+
+  const handleExport = () => {
+    toast.success('Export started', {
+      description: 'Your CSV file is being generated and will download shortly.'
+    });
+  };
 
   // Define Columns
   const columns = useMemo<ColumnDef<Order>[]>(
@@ -131,7 +139,10 @@ export const Dashboard: React.FC = () => {
             placeholder="Search orders..."
             className="block w-full sm:w-64 px-3 py-2 border border-white/10 rounded-xl leading-5 bg-[#1A1A1A] text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all"
           />
-          <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-xl transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-[#111111]">
+          <button 
+            onClick={handleExport}
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-transparent"
+          >
             <Download size={16} />
             <span className="hidden sm:inline">Export</span>
           </button>

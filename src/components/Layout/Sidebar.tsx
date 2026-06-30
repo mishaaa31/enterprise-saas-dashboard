@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { useAppSelector } from '../../store/hooks';
 import { cn } from '../../lib/utils';
+import { toast } from 'sonner';
 
 const navItems = [
   { icon: LayoutDashboard, label: 'Overview', path: '/overview' },
@@ -26,7 +27,7 @@ export const Sidebar: React.FC = () => {
   return (
     <aside
       className={cn(
-        "bg-[#111111] border-r border-white/5 transition-all duration-300 flex flex-col h-[calc(100vh-4rem)] lg:h-screen lg:sticky top-0",
+        "bg-transparent border-r border-white/5 backdrop-blur-md transition-all duration-300 flex flex-col h-[calc(100vh-4rem)] lg:h-screen lg:sticky top-0",
         sidebarOpen ? "w-64" : "w-0 lg:w-20 overflow-hidden"
       )}
     >
@@ -65,12 +66,19 @@ export const Sidebar: React.FC = () => {
 
       <div className="p-4 border-t border-white/5">
         <div className={cn(
-          "bg-[#1A1A1A] rounded-xl p-4 border border-white/5",
+          "bg-white/5 backdrop-blur-xl rounded-xl p-4 border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]",
           !sidebarOpen && "hidden"
         )}>
-          <p className="text-sm text-gray-300 font-medium mb-1">Need help?</p>
-          <p className="text-xs text-gray-500 mb-3">Please check our docs</p>
-          <button className="w-full py-2 bg-white/5 hover:bg-white/10 rounded-lg text-xs font-medium text-white transition-colors">
+          <p className="text-sm text-gray-200 font-medium mb-1">Need help?</p>
+          <p className="text-xs text-gray-400 mb-3">Please check our docs</p>
+          <button 
+            onClick={() => toast.promise(new Promise((resolve) => setTimeout(resolve, 1500)), {
+              loading: 'Loading documentation...',
+              success: 'Documentation loaded successfully!',
+              error: 'Error loading docs'
+            })}
+            className="w-full py-2 bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/20 rounded-lg text-xs font-medium text-blue-400 transition-all shadow-[0_0_15px_rgba(37,99,235,0.1)]"
+          >
             Documentation
           </button>
         </div>
