@@ -1,7 +1,7 @@
 # Enterprise SaaS Admin Dashboard (Pro-Dev Workspace)
 
-**Live Deployment URL (Placeholder)**: [https://enterprise-saas-dashboard.vercel.app](https://enterprise-saas-dashboard.vercel.app)
-**GitHub Repository (Placeholder)**: [https://github.com/your-username/enterprise-saas-dashboard](https://github.com/your-username/enterprise-saas-dashboard)
+**Live Deployment URL**: [https://enterprise-saas-dashboard-mishaaa31s-projects.vercel.app](https://enterprise-saas-dashboard-mishaaa31s-projects.vercel.app) (Please verify actual URL from Vercel)
+**GitHub Repository**: [https://github.com/mishaaa31/enterprise-saas-dashboard](https://github.com/mishaaa31/enterprise-saas-dashboard)
 
 A premium, production-ready, dark-mode only enterprise admin dashboard built to match Josh Technology Group (JTG) frontend engineering standards.
 
